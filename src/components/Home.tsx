@@ -115,7 +115,7 @@ const Home = () => {
                     </Form>
                 )}
             </Formik>
-            <div className={` boxShadow mt-5 border ${light?"border-white":"border-[#25273c]"} rounded-[4px]`}>
+            <div className={`boxShadow mt-5 border ${light?"border-white":"border-[#25273c]"} rounded-[4px]`}>
               
               {activeButton==="all" &&(
                 <div className="z-10 ">
