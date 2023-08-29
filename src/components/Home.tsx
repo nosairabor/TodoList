@@ -120,13 +120,12 @@ const Home = () => {
               {activeButton==="all" &&(
                 <div className="z-10 ">
                   {inputData.map((todos,index) => (
-                    <div key={todos.id} onClick={() => completeTodos(todos.id)} onTouchStart={() =>isHover(index)} onMouseEnter={() => isHover(index)}
-                      onMouseLeave={() => isHover(index)} onTouchEnd={() =>isHover(index)} className={` w-full max-w-[350px] md:min-w-[480px] whitespace-nowrap ma flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
+                    <div key={todos.id} onClick={() => completeTodos(todos.id)} className={` w-full min-w-[330px] md:min-w-[480px] whitespace-nowrap ma flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
                       {/* unchecked icon & the todo */}
                       <div className="flex space-x-2">
                         {todos.completed ?
                           <div className="flex font-[900] items-center justify-center shrink-0 l-gradient w-[21px] h-[21px] md:w-[23px] md:h-[23px] rounded-[50px]">
-                            <BsCheck2 className=" text-white"/>
+                            <BsCheck2 className="text-[14px] md:text-[18px]  text-white"/>
                           </div>
                           :
                           <div className="shrink-0 w-[21px] rounded-[50px] h-[21px] border border-[#6c757d] mt-[1.5px]"></div>
@@ -137,16 +136,15 @@ const Home = () => {
                         </div>
                       </div>
                       {/* trash icon */}
-                      <div className={`ml-[50px] trash-button ${hover[index] ? 'show' : ''}`}>
-                        {hover[index]&&
-                          <div className="pr-2">
-                            <BsTrashFill 
-                              className={`mt-[3px] ${light?"text-[#434247]":"text-[#4d5066]"}`}
-                              onClick={() => handleDelete(todos.id)}
-                            />
-                          </div>
-                          
-                        }
+                      <div className={`ml-[50px]`}>
+                            
+                            <div className="pr-2">
+                              <BsTrashFill 
+                                className={`mt-[3px] ${light?"text-[#434247]":"text-[#4d5066]"}`}
+                                onClick={() => handleDelete(todos.id)}
+                              />
+                            </div>
+                            
                       </div>
                     </div>
                   ))}
@@ -158,11 +156,11 @@ const Home = () => {
                   
                     {unSelected.map((todos, index)=>(
                       <div key={todos.id} onClick={() => completeTodos(todos.id)} onTouchStart={() =>isHover(index)} onMouseEnter={() => isHover(index)}
-                        onMouseLeave={() => isHover(index)} onTouchEnd={() =>isHover(index)} className={` w-full max-w-[350px] md:min-w-[480px] whitespace-nowrap ma flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
+                        onMouseLeave={() => isHover(index)} onTouchEnd={() =>isHover(index)} className={` w-full min-w-[330px] md:min-w-[480px] whitespace-nowrap ma flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
                           <div className="flex space-x-2">
                             {todos.completed ?
                               <div className="flex font-[900] items-center justify-center shrink-0 l-gradient w-[21px] h-[21px] md:w-[23px] md:h-[23px] rounded-[50px]">
-                                <BsCheck2 className=" text-white"/>
+                                <BsCheck2 className="text-white"/>
                               </div>
                               :
                               <div className="shrink-0 w-[21px] rounded-[50px] h-[21px] border border-[#6c757d] mt-[1.5px]"></div>
@@ -172,7 +170,7 @@ const Home = () => {
                             </div>
                           </div>
                           {/* trash icon */}
-                          <div className={`ml-[50px] trash-button ${hover[index] ? 'show' : ''}`}>
+                          {/* <div className={`ml-[50px] trash-button ${hover[index] ? 'show' : ''}`}>
                             {hover[index] &&
                               <div className="pr-2">
                                 <BsTrashFill 
@@ -181,6 +179,16 @@ const Home = () => {
                                 />
                               </div>
                             }
+                          </div> */}
+                          <div className={`ml-[50px]`}>
+                            
+                            <div className="pr-2">
+                              <BsTrashFill 
+                                className={`mt-[3px] ${light?"text-[#434247]":"text-[#4d5066]"}`}
+                                onClick={() => handleDelete(todos.id)}
+                              />
+                            </div>
+                            
                           </div>
                       </div>
                     ))}
@@ -192,12 +200,11 @@ const Home = () => {
                 <div className="">
                   
                   {selectedItems.map((todos, index)=>(
-                    <div key={todos.id} onClick={() => completeTodos(todos.id)} onTouchStart={() =>isHover(index)} onMouseEnter={() => isHover(index)}
-                      onMouseLeave={() => isHover(index)} onTouchEnd={() =>isHover(index)} className={` w-full max-w-[350px] md:min-w-[480px] whitespace-nowrap ma flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
+                    <div key={todos.id} onClick={() => completeTodos(todos.id)} className={` w-full min-w-[330px] md:min-w-[480px] whitespace-nowrap flex justify-between p-3 border-b  ${light?"bg-white border-[#d2d3db]":"flex bg-[#25273c] border-[#4f5472]"}`}>
                         <div className="flex space-x-2">
                           {todos.completed ?
                             <div className="flex font-[900] items-center justify-center shrink-0 l-gradient w-[21px] h-[21px] md:w-[23px] md:h-[23px] rounded-[50px]">
-                              <BsCheck2 className=" text-white"/>
+                              <BsCheck2 className="text-[14px] md:text-[18px] text-white"/>
                             </div>
                             :
                             <div className="shrink-0 w-[21px] rounded-[50px] h-[21px] border border-[#6c757d] mt-[1.5px]"></div>
@@ -207,22 +214,22 @@ const Home = () => {
                           </div>
                         </div>
                         {/* trash icon */}
-                        <div className={`ml-[50px] trash-button ${hover[index] ? 'show' : ''}`}>
-                          {hover[index] &&
+                        <div className={`ml-[50px]`}>
+                            
                             <div className="pr-2">
                               <BsTrashFill 
                                 className={`mt-[3px] ${light?"text-[#434247]":"text-[#4d5066]"}`}
                                 onClick={() => handleDelete(todos.id)}
                               />
                             </div>
-                          }
+                            
                         </div>
                     </div>
                   ))}
                 </div>
               )}
 
-              <div className={`text-base md:text-lg w-full max-w-[350px] md:min-w-[480px] text-base p-3 flex justify-between ${light?"text-[#4d5066] bg-white":"text-[#99989E] bg-[#25273c]"}`}>
+              <div className={`text-base md:text-lg w-full min-w-[330px] md:min-w-[480px] text-base p-3 flex justify-between ${light?"text-[#4d5066] bg-white":"text-[#99989E] bg-[#25273c]"}`}>
                 <div>{unSelected.length} items left </div>
                 <div className="hidden md:block space-x-3">
                   <button className={`${activeButton==="all" &&"text-blue"}`} onClick={() =>handleButtonClick("all")}>All</button>
@@ -233,7 +240,7 @@ const Home = () => {
               </div>
 
             </div>
-            <div className={`text-base mt-3 text-base block md:hidden w-full max-w-[350px] rounded-[4px] text-base p-3 flex justify-center space-x-3 ${light?"text-[#4d5066] bg-white":"text-[#99989E] bg-[#25273c]"}`}>
+            <div className={`text-base mt-3 text-base block md:hidden w-full min-w-[330px] rounded-[4px] text-base p-3 flex justify-center space-x-3 ${light?"text-[#4d5066] bg-white":"text-[#99989E] bg-[#25273c]"}`}>
               <button className={`${activeButton==="all" &&"text-blue"}`} onClick={() =>handleButtonClick("all")}>All</button>
               <button className={`${activeButton==="active" &&"text-blue"}`} onClick={() => handleButtonClick("active")}>Active</button>
               <button className={`${activeButton==="completed" &&"text-blue"}`} onClick={() => handleButtonClick("completed")}>Completed</button>
