@@ -75,7 +75,7 @@ const Home = () => {
           <div className="-translate-y-[40px]  self-center ">
             <div className="flex -translate-y-[90px]  md:-translate-y-[50px] md:justify-center  md:space-x-[300px]">
                 
-                <h1 className="text-white text-[32px]  md:text-[34px] tracking-[8px] md:tracking-[10px] font-extrabold">TODO</h1>
+                <h1 className="text-white text-[32px] mt-[2px] md:mt-0  md:text-[34px] tracking-[8px] md:tracking-[10px] font-extrabold">TODO</h1>
                 <div onClick={()=> dispatch(toggleLight())} className="mt-2">
                     {light ? (
                         <BsMoonFill className="text-white text-[28px]"/>
@@ -136,7 +136,7 @@ const Home = () => {
                         </div>
                       </div>
                       {/* trash icon */}
-                      <div className={`ml-[50px]`}>
+                      <div className={`ml-[50px] cursor-pointer`}>
                             
                             <div className="pr-2">
                               <BsTrashFill 
@@ -180,7 +180,7 @@ const Home = () => {
                               </div>
                             }
                           </div> */}
-                          <div className={`ml-[50px]`}>
+                          <div className={`ml-[50px] cursor-pointer`}>
                             
                             <div className="pr-2">
                               <BsTrashFill 
@@ -214,7 +214,7 @@ const Home = () => {
                           </div>
                         </div>
                         {/* trash icon */}
-                        <div className={`ml-[50px]`}>
+                        <div className={`ml-[50px] cursor-pointer`}>
                             
                             <div className="pr-2">
                               <BsTrashFill 
@@ -240,7 +240,7 @@ const Home = () => {
               </div>
 
             </div>
-            <div className={`text-base mt-3 text-base block md:hidden w-full min-w-[330px] rounded-[4px] text-base p-3 flex justify-center space-x-3 ${light?"text-[#4d5066] bg-white":"text-[#99989E] bg-[#25273c]"}`}>
+            <div className={`text-base mt-3 text-base block md:hidden w-full min-w-[330px] rounded-[4px] text-base p-3 flex justify-center space-x-3 ${light?"text-[#4d5066] bg-white boxShadow":"text-[#99989E] bg-[#25273c]"}`}>
               <button className={`${activeButton==="all" &&"text-blue"}`} onClick={() =>handleButtonClick("all")}>All</button>
               <button className={`${activeButton==="active" &&"text-blue"}`} onClick={() => handleButtonClick("active")}>Active</button>
               <button className={`${activeButton==="completed" &&"text-blue"}`} onClick={() => handleButtonClick("completed")}>Completed</button>
